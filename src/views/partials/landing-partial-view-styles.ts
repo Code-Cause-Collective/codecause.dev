@@ -74,6 +74,9 @@ export const landingPartialViewStyles = css`
     a.discord {
       font-size: 0.9rem;
     }
+    .container {
+      max-width: 90%;
+    }
   }
 
   @media (min-width: 1280px) {
