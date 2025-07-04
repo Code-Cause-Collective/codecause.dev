@@ -11,6 +11,6 @@ if (!meta) {
   document.head.appendChild(meta);
 }
 
-const csp = `object-src 'none'; media-src 'none'; base-uri 'none'; script-src 'nonce-${NONCE}'; style-src 'nonce-${NONCE}'; img-src 'nonce-${NONCE}';`;
+const csp = `object-src 'none'; media-src 'none'; base-uri 'none'; script-src 'self' 'nonce-${NONCE}'; style-src 'nonce-${NONCE}'; img-src 'self' 'nonce-${NONCE}';`;
 
 meta.setAttribute('content', `${csp}`);
