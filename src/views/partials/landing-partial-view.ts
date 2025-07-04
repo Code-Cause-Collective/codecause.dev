@@ -28,7 +28,7 @@ export class LandingPartialView extends LitElement {
         <h1>Building a Better World Through Code</h1>
         <p>
           Uniting developers to build a future driven by purpose, innovation,
-          good faith. Bridging imagination with action to shape a better
+          and good faith. Bridging imagination with action to shape a better
           tomorrow through technology.
         </p>
         <div class="cta-buttons">
