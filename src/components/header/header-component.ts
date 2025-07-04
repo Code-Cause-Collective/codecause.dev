@@ -20,12 +20,6 @@ export class HeaderComponent extends LitElement {
 
         <div class="nav-links">
           <a href="/about">About</a>
-          <a
-            href="https://join.slack.com/t/codecause/shared_invite/zt-38cobkbtz-u5kTq1cmKPZN9d5fpkZhkQ"
-            target="_blank"
-          >
-            Community</a
-          >
         </div>
       </nav>
     </header>`;
