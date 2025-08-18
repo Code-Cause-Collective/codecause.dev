@@ -1,12 +1,11 @@
 {
-  "name": "code-cause-web",
+  "name": "code-cause-site",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "engines": {
-    "node": ">=18.20.5 <=22.14.0",
-    "npm": ">=9.0.0",
-    "yarn": "Please use npm"
+    "node": ">=20",
+    "npm": ">=9.6.3"
   },
   "scripts": {
     "dev": "vite --port 3000",
@@ -17,23 +16,24 @@
   },
   "dependencies": {
     "@vaadin/router": "^2.0.0",
-    "lit": "^3.3.0",
-    "three": "^0.177.0",
-    "three-stdlib": "^2.36.0"
+    "lit": "^3.3.1",
+    "three": "^0.179.1",
+    "three-stdlib": "^2.36.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@types/three": "^0.177.0",
-    "@vitejs/plugin-legacy": "^6.1.1",
-    "eslint": "^9.29.0",
-    "eslint-config-prettier": "^10.1.5",
+    "@types/three": "^0.179.0",
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-lit": "^2.1.1",
-    "eslint-plugin-prettier": "^5.5.0",
-    "prettier": "^3.6.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
     "prettier-eslint": "^16.4.2",
     "terser": "^5.43.1",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.34.1",
-    "vite": "^6.3.5",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^7.1.2",
     "vite-plugin-eslint": "^1.8.1"
   }
 }
