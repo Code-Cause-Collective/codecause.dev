@@ -1,7 +1,8 @@
-# Code Cause Web
+# Code Cause Site
 
-> Main site for code cause (codecause.dev). Using [Lit](https://lit.dev/) but this may be subject to change.
+Main site for code cause
 
+<a href="https://discord.gg/HM5tZPhxg5"><img alt="discord-community" src="https://img.shields.io/badge/Join_Community-7289DA?style=flat&logo=discord&logoColor=white" /></a>
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)
 
 ---
@@ -15,11 +16,11 @@
 ## Installation
 
 ```bash
-git clone git@github.com:Code-Cause-Collective/code-cause-web.git
+git clone git@github.com:Code-Cause-Collective/codecause.dev.git code-cause-site
 ```
 
 ```bash
-cd code-cause-web
+cd code-cause-site
 ```
 
 ```bash
@@ -34,17 +35,29 @@ npm install
 npm run dev
 ```
 
-`Build`
+`build`
 
 ```bash
 npm run build
 ```
 
+`lint`
+
+```bash
+npm run lint
+```
+
+`format`
+
+```bash
+npm run format
+```
+
 ## Contributing
 
-### Issues and PRs
+### Issues, Features, and PRs
 
-If you have suggestions for how this project could be improved, or want to report a bug, open an issue! We'd love all and any contributions. If you have questions, post question within our [slack community](https://join.slack.com/t/codecause/shared_invite/zt-38cobkbtz-u5kTq1cmKPZN9d5fpkZhkQ).
+If you have suggestions for how this project could be improved, or want to report a bug, open an issue! We'd love all and any contributions. If you have questions, post question within our [discord community](https://discord.gg/HM5tZPhxg5).
 
 ### Submitting a pull request
 
