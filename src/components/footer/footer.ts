@@ -18,7 +18,7 @@ export class FooterComponent extends LitElement {
             <img class="icon" src=${linkedin} alt="linkedin-icon" />
           </a>
           •
-          <a href="https://github.com/Code-Cause-Community" target="_blank">
+          <a href="https://github.com/Code-Cause-Collective" target="_blank">
             <img class="github-icon icon" src=${github} alt="github-icon" />
           </a>
           •
