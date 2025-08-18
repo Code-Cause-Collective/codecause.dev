@@ -3,48 +3,8 @@ import { customElement } from 'lit/decorators.js';
 
 @customElement('about-view')
 export class AboutView extends LitElement {
-  static styles = css`
-    main {
-      width: 100%;
-      max-width: 768px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h3 {
-      font-weight: 700;
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
-    }
-
-    h3.title {
-      font-size: 1.875rem;
-      font-weight: 700;
-    }
-
-    h3.sub-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-top: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      color: #e5e7eb;
-      margin: 0;
-    }
-
-    hr {
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-top-width: 1px;
-      border-color: #374151;
-      border-style: solid;
-    }
-  `;
-
-  render(): TemplateResult<1> {
-    return html`<main>
+  render(): TemplateResult {
+    return html`<section>
       <h3 class="title">About Us</h3>
       <div>
         <p>
@@ -85,8 +45,41 @@ export class AboutView extends LitElement {
       </div>
 
       <hr />
-    </main> `;
+    </section> `;
   }
+
+  static styles = css`
+    h3 {
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    h3.title {
+      font-size: 1.875rem;
+      font-weight: 700;
+    }
+
+    h3.sub-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      color: #e5e7eb;
+      margin: 0;
+    }
+
+    hr {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-top-width: 1px;
+      border-color: #374151;
+      border-style: solid;
+    }
+  `;
 }
 
 declare global {

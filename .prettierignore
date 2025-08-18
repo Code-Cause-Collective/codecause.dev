@@ -3,6 +3,5 @@ dist/
 build
 
 coverage
-test
 
 package-lock.json

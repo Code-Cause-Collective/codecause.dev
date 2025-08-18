@@ -3,12 +3,36 @@ import { customElement } from 'lit/decorators.js';
 
 @customElement('not-found-view')
 export class NotFoundView extends LitElement {
+  connectedCallback(): void {
+    super.connectedCallback();
+    this.dispatchEvent(
+      new CustomEvent('is-page-not-found', {
+        detail: true,
+        bubbles: true,
+        composed: true,
+      })
+    );
+  }
+
+  render(): TemplateResult {
+    return html`<div>
+      <div class="title">
+        <p>Page Not Found</p>
+      </div>
+      <div class="message">
+        <p>Unfortunately, the requested resource could not be found.</p>
+      </div>
+      <div class="button-wrapper">
+        <a type="button" href="/">Return Home</a>
+      </div>
+    </div> `;
+  }
+
   static styles = css`
-    .container {
-      max-width: 512px;
+    :host {
       width: 100%;
-      margin: 0 auto;
-      padding: 1rem;
+      display: flex;
+      justify-content: center;
       text-align: center;
     }
 
@@ -16,16 +40,12 @@ export class NotFoundView extends LitElement {
       font-weight: 600;
       font-size: 1.875rem;
       line-height: 2.25rem;
-      margin-top: 20px;
     }
 
     .message {
       font-size: 0.875rem;
       font-weight: 500;
       color: #9ca3af;
-      display: flex;
-      justify-content: center;
-      margin-top: 15px;
       margin-bottom: 20px;
     }
 
@@ -46,7 +66,6 @@ export class NotFoundView extends LitElement {
       font-weight: 500;
       cursor: pointer;
       transition: background-color 0.2s ease;
-      outline-color: none;
       border: none;
       color: var(--white);
     }
@@ -55,19 +74,6 @@ export class NotFoundView extends LitElement {
       background-color: #0056b3;
     }
   `;
-  render(): TemplateResult<1> {
-    return html`<div class="container">
-      <div class="title">
-        <p>Page Not Found</p>
-      </div>
-      <div class="message">
-        <p>Unfortunately, the requested resource could not be found.</p>
-      </div>
-      <div class="button-wrapper">
-        <a type="button" href="/">Return Home</a>
-      </div>
-    </div> `;
-  }
 }
 
 declare global {

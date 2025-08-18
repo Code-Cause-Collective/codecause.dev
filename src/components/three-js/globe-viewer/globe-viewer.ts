@@ -5,22 +5,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 @customElement('globe-viewer')
 export class GlobeViewer extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      width: 100%;
-      height: 150px;
-      background-color: inherit;
-      position: relative;
-    }
-
-    .renderer-container {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-  `;
-
   private _scene!: THREE.Scene;
   private _camera!: THREE.PerspectiveCamera;
   private _renderer!: THREE.WebGLRenderer;
@@ -101,9 +85,28 @@ export class GlobeViewer extends LitElement {
     this._renderer.render(this._scene, this._camera);
   };
 
-  render(): TemplateResult<1> {
+  render(): TemplateResult {
     return html`<div class="renderer-container"></div>`;
   }
+
+  static styles = css`
+    :host {
+      display: block;
+      width: 100%;
+      height: 150px;
+      background-color: inherit;
+      position: relative;
+    }
+
+    .renderer-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  `;
 }
 
 declare global {
