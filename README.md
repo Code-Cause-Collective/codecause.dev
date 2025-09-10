@@ -16,11 +16,11 @@ Main site for code cause
 ## Installation
 
 ```bash
-git clone git@github.com:Code-Cause-Collective/codecause.dev.git code-cause-site
+git clone git@github.com:Code-Cause-Collective/codecause.dev.git
 ```
 
 ```bash
-cd code-cause-site
+cd codecause.dev
 ```
 
 ```bash
