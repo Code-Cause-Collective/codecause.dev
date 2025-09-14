@@ -23,11 +23,14 @@ export class HeaderComponent extends LitElement {
           <nav>
             <div class="nav-logo">
               <img class="logo" src=${logo} alt="code-cause-logo-img" />
-              <p class="app-title" aria-current="page">Code Cause</p>
+              <a href="/"
+                ><p class="app-title" aria-current="page">Code Cause</p></a
+              >
             </div>
 
             <div class="nav-links">
               <a href="/about">About</a>
+              <a href="/projects">Projects</a>
             </div>
           </nav>
         </header>`
@@ -59,6 +62,11 @@ export class HeaderComponent extends LitElement {
       align-items: center;
     }
 
+    .nav-logo a {
+      text-decoration: none;
+      color: var(--primary-text-color);
+    }
+
     .logo {
       height: 1.8rem;
       width: auto;
@@ -84,6 +92,20 @@ export class HeaderComponent extends LitElement {
 
     a:hover {
       color: #4b7ce6;
+    }
+
+    @media only screen and (max-width: 640px) {
+      .logo {
+        height: 1.65rem;
+      }
+
+      .app-title {
+        font-size: 0.95rem;
+      }
+
+      .nav-links a {
+        font-size: 0.95rem;
+      }
     }
   `;
 }
