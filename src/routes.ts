@@ -32,6 +32,18 @@ export const routes: Route[] = [
     },
   },
   {
+    path: '/projects',
+    async action(
+      this: Route,
+      _context: RouteContext,
+      commands: Commands
+    ): Promise<ActionResult> {
+      await import('./views/projects-view');
+      document.title = `${APP_TITLE} | Projects`;
+      return commands.component('projects-view');
+    },
+  },
+  {
     path: '(.*)',
     async action(
       this: Route,
