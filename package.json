@@ -1,11 +1,11 @@
 {
-  "name": "code-cause-site",
+  "name": "codecause.dev",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "engines": {
-    "node": ">=20",
-    "npm": ">=9.6.3"
+    "node": ">=24",
+    "npm": ">=11.6.2"
   },
   "scripts": {
     "dev": "vite --port 3000",
