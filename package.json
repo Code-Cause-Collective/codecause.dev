@@ -1,7 +1,7 @@
 {
   "name": "codecause.dev",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "engines": {
     "node": ">=24",
@@ -20,8 +20,7 @@
     "lit": "^3.3.2",
     "three": "^0.182.0",
     "three-stdlib": "^2.36.1",
-    "urlpattern-polyfill": "^10.1.0",
-    "uuid": "^13.0.0"
+    "urlpattern-polyfill": "^10.1.0"
   },
   "devDependencies": {
     "@types/three": "^0.182.0",
