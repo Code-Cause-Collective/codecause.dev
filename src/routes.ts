@@ -1,58 +1,42 @@
-import type {
-  ActionResult,
-  Route,
-  RouteContext,
-  Commands,
-} from '@vaadin/router';
 import { APP_TITLE } from './utils/constants';
+import { html } from 'lit';
+import type { RouteConfig } from '@lit-labs/router';
 
-export const routes: Route[] = [
+export const routes: RouteConfig[] = [
   {
     path: '/',
-    async action(
-      this: Route,
-      _context: RouteContext,
-      commands: Commands
-    ): Promise<ActionResult> {
-      await import('./views/home-view');
+    render: () => html`<home-page></home-page>`,
+    enter: async (): Promise<boolean> => {
+      await import('./pages/home.ts');
       document.title = `${APP_TITLE} | Inspiring innovation, empowering collaboration, enabling progress, and driving impact through code`;
-      return commands.component('home-view');
+      return true;
     },
   },
   {
     path: '/about',
-    async action(
-      this: Route,
-      _context: RouteContext,
-      commands: Commands
-    ): Promise<ActionResult> {
-      await import('./views/about-view');
+    render: () => html`<about-page></about-page>`,
+    enter: async (): Promise<boolean> => {
+      await import('./pages/about.ts');
       document.title = `${APP_TITLE} | About`;
-      return commands.component('about-view');
+      return true;
     },
   },
   {
     path: '/projects',
-    async action(
-      this: Route,
-      _context: RouteContext,
-      commands: Commands
-    ): Promise<ActionResult> {
-      await import('./views/projects-view');
+    render: () => html`<projects-page></projects-page>`,
+    enter: async (): Promise<boolean> => {
+      await import('./pages/projects.ts');
       document.title = `${APP_TITLE} | Projects`;
-      return commands.component('projects-view');
+      return true;
     },
   },
   {
-    path: '(.*)',
-    async action(
-      this: Route,
-      _context: RouteContext,
-      commands: Commands
-    ): Promise<ActionResult> {
-      await import('./views/not-found-view');
+    path: '/*',
+    render: () => html`<not-found-page></not-found-page>`,
+    enter: async (): Promise<boolean> => {
+      await import('./pages/not-found.ts');
       document.title = `${APP_TITLE} | Page not found`;
-      return commands.component('not-found-view');
+      return true;
     },
   },
 ];

@@ -15,11 +15,12 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@lit-labs/router": "^0.1.4",
     "@lit/task": "^1.0.3",
-    "@vaadin/router": "^2.0.1",
     "lit": "^3.3.2",
     "three": "^0.182.0",
     "three-stdlib": "^2.36.1",
+    "urlpattern-polyfill": "^10.1.0",
     "uuid": "^13.0.0"
   },
   "devDependencies": {

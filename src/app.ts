@@ -1,26 +1,20 @@
 import { LitElement, html, css, type TemplateResult } from 'lit';
-import { customElement, query } from 'lit/decorators.js';
-import { Router } from '@vaadin/router';
+import { customElement } from 'lit/decorators.js';
 import { routes } from './routes';
 
 import './components/header/header';
 import './components/footer/footer';
+import { Router } from '@lit-labs/router';
 
 @customElement('app-root')
 export class AppRoot extends LitElement {
-  @query('#outlet')
-  private _outlet!: HTMLElement | null;
-
-  firstUpdated(): void {
-    const router = new Router(this._outlet);
-    router.setRoutes(routes);
-  }
+  private _router = new Router(this, routes);
 
   render(): TemplateResult {
     return html`
       <main>
         <app-header></app-header>
-        <div id="outlet"></div>
+        <div id="outlet">${this._router.outlet()}</div>
         <app-footer></app-footer>
       </main>
     `;

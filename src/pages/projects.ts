@@ -15,8 +15,8 @@ type Repo = {
   stargazers_count: number;
 };
 
-@customElement('projects-view')
-export class ProjectsView extends LitElement {
+@customElement('projects-page')
+export class ProjectsPage extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
     this._githubReposTask.run();
@@ -172,6 +172,6 @@ export class ProjectsView extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'projects-view': ProjectsView;
+    'projects-page': ProjectsPage;
   }
 }

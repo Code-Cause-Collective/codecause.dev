@@ -19,8 +19,8 @@ const PERSON_IMAGES: readonly {
   { alt: 'person-4', path: person4, id: '4' },
 ];
 
-@customElement('home-view')
-export class HomeView extends LitElement {
+@customElement('home-page')
+export class HomePage extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
     this.dispatchEvent(
@@ -203,6 +203,6 @@ export class HomeView extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'home-view': HomeView;
+    'home-page': HomePage;
   }
 }
