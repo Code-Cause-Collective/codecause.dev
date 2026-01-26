@@ -1,60 +1,64 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { defineConfig } from 'vite';
+import fs from 'fs';
+
+import { defineConfig, loadEnv } from 'vite';
 import eslint from 'vite-plugin-eslint';
 import legacy from '@vitejs/plugin-legacy';
-import { UUIDv4 } from './src/utils/helperFunctions';
 
-export default defineConfig({
-  plugins: [
-    eslint(),
-    legacy({
-      targets: ['defaults', 'not IE 11'],
-    }),
-    {
-      name: 'csp',
-      transformIndexHtml(html) {
-        const NONCE = UUIDv4();
-        const csp = `object-src 'none'; media-src 'none'; base-uri 'none'; script-src 'self' 'nonce-${NONCE}'; style-src 'self' 'nonce-${NONCE}'; style-src-attr 'nonce-${NONCE}'; img-src 'self' 'nonce-${NONCE}';`;
-        html = html.replace(/<style>/g, `<style nonce="${NONCE}">`);
-        html = html.replace(
-          /<script\s+/g,
-          `<script nonce="${NONCE}" type="module"`
-        );
-        html = html.replace(
-          /<link\s+rel="stylesheet"/g,
-          `<link rel="stylesheet" nonce="${NONCE}"`
-        );
-        html = html.replace(
-          /<head>/,
-          `<head>\n<meta http-equiv="Content-Security-Policy" content="${csp}">`
-        );
-        return html;
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+  const isDevHTTPSEnabled =
+    typeof env.HTTPS_CERT === 'string' && typeof env.HTTPS_KEY === 'string';
+  return {
+    server: isDevHTTPSEnabled
+      ? {
+          https: {
+            key: fs.readFileSync(env.HTTPS_KEY),
+            cert: fs.readFileSync(env.HTTPS_CERT),
+          },
+        }
+      : undefined,
+    plugins: [
+      eslint(),
+      legacy({
+        targets: ['defaults', 'not IE 11'],
+      }),
+      {
+        name: 'csp',
+        transformIndexHtml(html) {
+          const csp = `default-src 'none'; script-src 'self'; connect-src 'self' https://api.github.com; img-src 'self'; style-src 'self'; form-action 'self'; object-src 'none'; media-src 'self'; base-uri 'none'; upgrade-insecure-requests;`;
+          html = html.replace(
+            /<head>/,
+            `<head>\n<meta http-equiv="Content-Security-Policy" content="${csp}">`
+          );
+          return html;
+        },
+      },
+    ],
+    build: {
+      outDir: 'dist/browser',
+      rollupOptions: {
+        output: {
+          entryFileNames: '[name].[hash].js',
+          chunkFileNames: '[name].[hash].js',
+          assetFileNames: '[name].[hash].[ext]',
+        },
+      },
+      sourcemap: false,
+      minify: 'terser',
+      terserOptions: {
+        format: {
+          comments: false,
+        },
+        parse: {
+          html5_comments: false,
+        },
+        sourceMap: false,
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
       },
     },
-  ],
-  build: {
-    outDir: 'dist/browser',
-    rollupOptions: {
-      output: {
-        entryFileNames: '[name].[hash].js',
-        chunkFileNames: '[name].[hash].js',
-        assetFileNames: '[name].[hash].[ext]',
-      },
-    },
-    sourcemap: false,
-    minify: 'terser',
-    terserOptions: {
-      format: {
-        comments: false,
-      },
-      parse: {
-        html5_comments: false,
-      },
-      sourceMap: false,
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
-  },
+  };
 });

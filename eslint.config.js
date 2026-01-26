@@ -18,6 +18,7 @@ export default [
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
+        process: 'readonly',
         ...globals.browser,
       },
     },
