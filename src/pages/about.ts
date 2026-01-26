@@ -1,8 +1,8 @@
 import { LitElement, html, css, type TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-@customElement('about-view')
-export class AboutView extends LitElement {
+@customElement('about-page')
+export class AboutPage extends LitElement {
   render(): TemplateResult {
     return html`<section>
       <h3 class="title">About Us</h3>
@@ -84,6 +84,6 @@ export class AboutView extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'about-view': AboutView;
+    'about-page': AboutPage;
   }
 }

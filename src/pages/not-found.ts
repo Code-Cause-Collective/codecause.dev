@@ -1,8 +1,8 @@
 import { LitElement, css, html, type TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-@customElement('not-found-view')
-export class NotFoundView extends LitElement {
+@customElement('not-found-page')
+export class NotFoundPage extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
     this.dispatchEvent(
@@ -78,6 +78,6 @@ export class NotFoundView extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'not-found-view': NotFoundView;
+    'not-found-page': NotFoundPage;
   }
 }
