@@ -18,23 +18,23 @@
     "@lit-labs/router": "^0.1.4",
     "@lit/task": "^1.0.3",
     "lit": "^3.3.2",
-    "three": "^0.182.0",
+    "three": "^0.183.2",
     "three-stdlib": "^2.36.1",
     "urlpattern-polyfill": "^10.1.0"
   },
   "devDependencies": {
-    "@types/three": "^0.182.0",
-    "@vitejs/plugin-legacy": "^7.2.1",
-    "eslint": "^9.39.2",
+    "@types/three": "^0.183.1",
+    "@vitejs/plugin-legacy": "^8.0.0",
+    "eslint": "^10.0.3",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-lit": "^2.1.1",
+    "eslint-plugin-lit": "^2.2.1",
     "eslint-plugin-prettier": "^5.5.5",
     "prettier": "^3.8.1",
     "prettier-eslint": "^16.4.2",
-    "terser": "^5.46.0",
+    "terser": "^5.46.1",
     "typescript": "~5.9.2",
-    "typescript-eslint": "^8.53.1",
-    "vite": "^7.3.1",
+    "typescript-eslint": "^8.57.1",
+    "vite": "^8.0.0",
     "vite-plugin-eslint": "^1.8.1"
   }
 }
