@@ -17,7 +17,7 @@
   "dependencies": {
     "@lit-labs/router": "^0.1.4",
     "@lit/task": "^1.0.3",
-    "lit": "^3.3.2",
+    "lit": "^3.3.3",
     "three": "^0.182.0",
     "three-stdlib": "^2.36.1",
     "urlpattern-polyfill": "^10.1.0"
@@ -25,16 +25,16 @@
   "devDependencies": {
     "@types/three": "^0.182.0",
     "@vitejs/plugin-legacy": "^7.2.1",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-lit": "^2.1.1",
-    "eslint-plugin-prettier": "^5.5.5",
-    "prettier": "^3.8.1",
+    "eslint-plugin-lit": "^2.3.1",
+    "eslint-plugin-prettier": "^5.5.6",
+    "prettier": "^3.9.6",
     "prettier-eslint": "^16.4.2",
-    "terser": "^5.46.0",
+    "terser": "^5.51.2",
     "typescript": "~5.9.2",
-    "typescript-eslint": "^8.53.1",
-    "vite": "^7.3.1",
+    "typescript-eslint": "^8.68.0",
+    "vite": "^7.3.6",
     "vite-plugin-eslint": "^1.8.1"
   }
 }
