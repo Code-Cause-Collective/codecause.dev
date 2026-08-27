@@ -18,23 +18,25 @@ export class HeaderComponent extends LitElement {
   }
 
   render(): TemplateResult {
-    return html`${!this._isPageNotFoundInView
-      ? html`<header>
-          <nav>
-            <div class="nav-logo">
-              <img class="logo" src=${logo} alt="code-cause-logo-img" />
-              <a href="/"
-                ><p class="app-title" aria-current="page">Code Cause</p></a
-              >
-            </div>
+    return html`${
+      !this._isPageNotFoundInView
+        ? html`<header>
+            <nav>
+              <div class="nav-logo">
+                <img class="logo" src=${logo} alt="code-cause-logo-img" />
+                <a href="/"
+                  ><p class="app-title" aria-current="page">Code Cause</p></a
+                >
+              </div>
 
-            <div class="nav-links">
-              <a href="/about">About</a>
-              <a href="/projects">Projects</a>
-            </div>
-          </nav>
-        </header>`
-      : nothing}`;
+              <div class="nav-links">
+                <a href="/about">About</a>
+                <a href="/projects">Projects</a>
+              </div>
+            </nav>
+          </header>`
+        : nothing
+    }`;
   }
 
   /**
